@@ -6,4 +6,21 @@ cahi
  
 {% block content %} 
 <h1>Welcome to my chai page</h1>
+<div class="grid grid-cols-3 gap-4 m-4">
+
+{% for chai in chasi %}
+ <div class="bg-green-500 p-4 rounded">
+    <img class="rounded shadow" src="{{ chai.image.url }}" alt="">
+    <h3 class="text-white text-lg font-bold">{{ chai.name }}</h3>
+    <a href="{% url 'chai_detail' chai.id %}">
+        <button
+            class="bg-white text-green-500  w-[100%] px-4 py-2 rounded hover:bg-green-500 hover:text-white transition duration-300">
+            {{chai.type}}-{{chai.id}}
+        </button>
+ </div>
+{% endfor %}
+
+</div>
 {% endblock %}
+
+
